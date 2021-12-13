@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "uno", "top": -43.2, "left": 172.3, "attrs": {} },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "ssd1306",
+      "top": 150.7,
+      "left": -7.7,
+      "attrs": { "i2c-address": "0x3C" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 74.7,
+      "left": -30.3,
+      "rotate": 90,
+      "attrs": { "color": "green", "key": "a", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 74.7,
+      "left": 27.3,
+      "rotate": 90,
+      "attrs": { "color": "green", "key": "s", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 75.2,
+      "left": 87.92,
+      "rotate": 90,
+      "attrs": { "color": "green", "key": "d", "bounce": "0" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": -96.2, "left": 257, "rotate": 90, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -96.2,
+      "left": 247.4,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -96.2,
+      "left": 237.8,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "uno:GND.2", "ssd1306:GND", "black", [ "v12", "*", "h0" ] ],
+    [ "uno:5V", "ssd1306:VIN", "red", [ "v16", "*", "h0" ] ],
+    [ "uno:A4", "ssd1306:DATA", "blue", [ "v20", "*", "h0" ] ],
+    [ "uno:A5", "ssd1306:CLK", "purple", [ "v24", "*", "h0" ] ],
+    [ "btn2:2.l", "btn3:2.l", "green", [ "v-13", "h46" ] ],
+    [ "btn1:2.l", "btn2:2.l", "green", [ "v-13", "h48" ] ],
+    [ "uno:GND.2", "btn2:2.l", "black", [ "v-9.6", "h-211.2" ] ],
+    [ "uno:2", "r1:2", "green", [ "v0" ] ],
+    [ "uno:3", "r2:2", "green", [ "v0" ] ],
+    [ "r2:1", "r1:1", "green", [ "h0" ] ],
+    [ "r1:1", "uno:5V.2", "green", [ "h0" ] ],
+    [ "uno:2", "btn3:1.r", "green", [ "v0" ] ],
+    [ "uno:3", "btn1:1.r", "green", [ "v182.4", "h-259.2" ] ],
+    [ "r3:1", "r2:1", "green", [ "h0" ] ],
+    [ "r3:2", "uno:4", "green", [ "h0" ] ],
+    [ "uno:4", "btn2:1.r", "green", [ "v0" ] ]
+  ]
+}

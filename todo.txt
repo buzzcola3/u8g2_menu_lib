@@ -1,0 +1,31 @@
+//done - change power_of_two to 8-16-24-...
+//done - add menu text size option
+- add menu text spacing option
+- way to update screen settings (spacing, text size)
+- add "()" for submenu link 
+- allow more than 9 char of text per line
+
+- eeprom
+  //done - partition eeprom
+  //done - add integers larger than 255
+  //done - update eeprom_int_array[] when updating EEPROM integer
+  - ability to save bool
+  - ability to save float
+  - add stock eeprom settings
+  - add save to eeprom option
+
+//done - SSD1306_Menu::Up/Down if updating integer, update in loop (so i2c doesnt get interrupted)
+
+//done - only refresh if theres a change
+
+This library makes it really easy to create menus on arduino on SSD1306 displays
+using the adafruit SSD1306 library using only one char array for the menu it self.
+
+features:
+ - scrolling menu
+ - very easy to add submenus
+ - read variables from eeprom
+ - save variables to eeprom
+ - ability to show constantly updating integers
+ - two text sizes
+ -  
